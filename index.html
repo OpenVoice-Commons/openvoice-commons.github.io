@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenVoice Commons - Self-Hosted Multimodal Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-box h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .cta {
+            background: #667eea;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+
+        .cta:hover {
+            background: #5568d3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .status {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        a {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>OpenVoice Commons</h1>
+        <p class="tagline">Self-Hosted Multimodal Search for Text, Audio & Images</p>
+    </header>
+
+    <div class="container">
+        <div class="status">
+            <strong>🚧 Project Status:</strong> Applying for NGI Zero Commons Fund funding (November 2025)
+        </div>
+
+        <div class="section">
+            <h2>About the Project</h2>
+            <p>
+                OpenVoice Commons is a self-hosted, privacy-first search application that lets you search across
+                text documents, audio files, and images. Built entirely in Python, it combines Whisper-based
+                speech transcription with modern search techniques (semantic, keyword, hybrid) and optional
+                AI-powered summarization through local LLMs.
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Think:</strong> "LM Studio or GPT4All, but for multimodal archives including audio"
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>🎙️ Audio Transcription</h3>
+                    <p>Whisper-based speech-to-text, fine-tuned for Hungarian and extensible to other languages</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔍 Modern Search</h3>
+                    <p>Keyword (BM25), semantic (embeddings), and hybrid search with reranking</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🏠 Self-Hosted</h3>
+                    <p>Run locally with Docker. Your data never leaves your machine</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🤖 AI Integration</h3>
+                    <p>RAG-based summarization with local LLMs (Ollama, llama.cpp)</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🐍 Pure Python</h3>
+                    <p>Entire stack in Python (Flask UI) - accessible to NLP researchers</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔌 Extensible</h3>
+                    <p>Plugin architecture for content analysis, topic modeling, and more</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Use Cases</h2>
+            <ul>
+                <li><strong>Archives & Libraries:</strong> Make audio collections searchable</li>
+                <li><strong>Researchers:</strong> Search oral history, interview recordings, lecture archives</li>
+                <li><strong>Journalists:</strong> Search through hours of interview recordings</li>
+                <li><strong>Community Organizations:</strong> Index radio broadcasts, podcasts, public meetings</li>
+                <li><strong>Digital Humanities:</strong> Corpus linguistics on audio/text collections</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Focus on Underresourced Languages</h2>
+            <p>
+                Our initial focus is <strong>Hungarian</strong>, leveraging data from our Mozilla Common Voice
+                campaign during the Radioship project. The extensible architecture allows other language
+                communities to adapt the system for their needs, with special attention to morphologically-rich
+                languages.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Team</h2>
+            <p>
+                We're a team of three who have successfully delivered two Google-funded projects together:
+            </p>
+            <ul>
+                <li><strong>Zoltán Várjú</strong> - Computational Linguist & AI Product Leader (20+ years NLP experience)</li>
+                <li><strong>Dr. Orsolya Putz</strong> - Linguistics PhD & NLP Engineer (Assistant Professor, BME)</li>
+                <li><strong>József Venczeli</strong> - MSc Cognitive Science & Data Engineer</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                Previous collaborations: <strong>Complytron</strong> (Google DNI → acquired fintech product)
+                and <strong>Radioship</strong> (Google News Initiative, speech-to-text for radio archives)
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Project Timeline</h2>
+            <p>
+                <strong>Current Status:</strong> Applying for NGI Zero Commons Fund (November 2025)<br>
+                <strong>Development:</strong> 9 months (if funded, starting early 2026)<br>
+                <strong>Expected Deliverables:</strong> Docker-deployable application, fine-tuned Hungarian model,
+                comprehensive documentation, reference deployments
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Get Involved</h2>
+            <p>
+                The project will be fully open source. We'll be looking for:
+            </p>
+            <ul>
+                <li>Early testers with audio archives to search</li>
+                <li>Contributors for other language support</li>
+                <li>Plugin developers for content analysis features</li>
+                <li>Organizations interested in deployment</li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <strong>Contact:</strong> <a href="mailto:zoltan.varju@crowintelligence.org">zoltan.varju@crowintelligence.org</a>
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Links & Resources</h2>
+            <ul>
+                <li><strong>GitHub:</strong> Repository will be created upon project start</li>
+                <li><strong>Funding:</strong> <a href="https://nlnet.nl/commonsfund/" target="_blank">NGI Zero Commons Fund</a></li>
+                <li><strong>Previous Work:</strong> Radioship/Koffair (Google News Initiative, 2022-2023)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 OpenVoice Commons Team | Applying for NGI Zero Commons Fund</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Built with ❤️ for digital sovereignty and underresourced languages
+        </p>
+    </footer>
+</body>
+</html>
